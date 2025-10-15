@@ -1,0 +1,50 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes +FollowSymLinks
+    </IfModule>
+
+    RewriteEngine On
+
+    # -------------------------------------------
+    # Redirect HTTP ke HTTPS (opsional, jika SSL aktif)
+    # -------------------------------------------
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # -------------------------------------------
+    # Akses langsung ke /storage (tanpa symlink)
+    # -------------------------------------------
+    RewriteCond %{REQUEST_URI} ^/storage/(.*)$
+    RewriteCond %{DOCUMENT_ROOT}/../storage/app/public/%1 -f
+    RewriteRule ^storage/(.*)$ ../storage/app/public/$1 [L]
+
+    # -------------------------------------------
+    # Laravel front controller
+    # -------------------------------------------
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+# -------------------------------------------
+# Security basic
+# -------------------------------------------
+<FilesMatch "^\.env">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "composer\.(json|lock)">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "artisan">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "package\.(json|lock)">
+    Require all denied
+</FilesMatch>
