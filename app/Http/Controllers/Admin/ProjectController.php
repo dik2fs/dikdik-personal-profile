@@ -55,12 +55,10 @@ class ProjectController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            // Simpan file ke folder 'projects' di storage/app/public
             $imagePath = $request->file('image')->store('projects', 'public');
             $validated['image'] = $imagePath;
         }
 
-        $validated['technologies'] = $validated['technologies'];
         $validated['featured'] = $request->has('featured');
 
         Project::create($validated);
@@ -111,12 +109,10 @@ class ProjectController extends Controller
                 Storage::disk('public')->delete($project->image);
             }
             
-            // Simpan file baru
             $imagePath = $request->file('image')->store('projects', 'public');
             $validated['image'] = $imagePath;
         }
 
-        $validated['technologies'] = $validated['technologies'];
         $validated['featured'] = $request->has('featured');
 
         $project->update($validated);
