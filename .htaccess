@@ -1,9 +1,15 @@
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
-        Options -MultiViews -Indexes
+        Options -MultiViews -Indexes +FollowSymLinks
     </IfModule>
 
     RewriteEngine On
+
+    # --- Tambahan untuk akses storage tanpa artisan storage:link ---
+    RewriteCond %{REQUEST_URI} ^/storage/(.*)$
+    RewriteCond %{DOCUMENT_ROOT}/storage/app/public/%1 -f
+    RewriteRule ^storage/(.*)$ storage/app/public/$1 [L]
+    # ----------------------------------------------------------------
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
