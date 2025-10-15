@@ -11,7 +11,7 @@ use App\Http\Controllers\Auth\LoginController;
 // ==================== FRONTEND ROUTES ====================
 Route::get('/', [ProfileController::class, 'index'])->name('home');
 Route::get('/about', [ProfileController::class, 'about'])->name('about');
-Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects'); // <- DIUBAH
 Route::get('/projects/{id}', [ProjectController::class, 'show'])->name('projects.show');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact'); // <- DIUBAH
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
