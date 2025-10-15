@@ -369,7 +369,7 @@
                        `Nama: ${name}\n` +
                        `WhatsApp: ${phone}`;
         
-        const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/6281311203436?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
         
         closeOrderModal();
