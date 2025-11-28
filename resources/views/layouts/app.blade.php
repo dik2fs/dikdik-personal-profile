@@ -29,7 +29,8 @@
     
     @yield('head')
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-900">
+
     <!-- Navigation -->
 <nav class="bg-white shadow-lg sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4">
@@ -224,7 +225,8 @@
     </script>
 </body>
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+<footer class="bg-gray-900 text-gray-300 py-12 mt-0">
+
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
 
         <!-- Profile Summary -->
