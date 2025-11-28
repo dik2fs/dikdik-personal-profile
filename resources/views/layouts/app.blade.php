@@ -97,25 +97,7 @@
         @yield('content')
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>&copy; 2024 Profil Saya. All rights reserved.</p>
-            <div class="mt-4 flex justify-center space-x-6">
-                <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">
-                    <i class="fab fa-linkedin fa-lg"></i>
-                </a>
-                <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">
-                    <i class="fab fa-github fa-lg"></i>
-                </a>
-                <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">
-                    <i class="fab fa-twitter fa-lg"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
+       <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
