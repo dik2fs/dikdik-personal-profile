@@ -14,7 +14,6 @@
     </div>
 </section>
 
-
 <!-- MAIN CONTACT SECTION -->
 <section class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -70,8 +69,6 @@
             </a>
         </div>
 
-
-
         <!-- RIGHT SIDE — CONTACT FORM -->
         <div>
             <h2 class="text-3xl font-bold text-gray-900 mb-6">Kirim Pesan</h2>
@@ -82,7 +79,7 @@
             </div>
             @endif
 
-            <form action="{{ route('contact.submit') }}" method="POST" class="space-y-5">
+            <form action="{{ route('contact.store') }}" method="POST" class="space-y-5">
                 @csrf
 
                 <!-- Name -->
