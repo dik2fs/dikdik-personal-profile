@@ -241,4 +241,80 @@
         });
     </script>
 </body>
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <!-- Profile Summary -->
+        <div>
+            <h3 class="text-xl font-semibold text-white mb-4">Tentang Saya</h3>
+            <p class="text-gray-400 leading-relaxed">
+                Website portofolio resmi Dikdik Firman Sidik, berisi karya, buku, penelitian, dan proyek digital
+                yang sedang maupun telah dikembangkan.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h3 class="text-xl font-semibold text-white mb-4">Navigasi</h3>
+            <ul class="space-y-2">
+                <li><a href="{{ route('home') }}" class="hover:text-white">Beranda</a></li>
+                <li><a href="{{ route('about') }}" class="hover:text-white">Tentang</a></li>
+                <li><a href="{{ route('projects') }}" class="hover:text-white">Proyek</a></li>
+                <li><a href="{{ route('books.index') }}" class="hover:text-white">Buku</a></li>
+                <li><a href="{{ route('contact') }}" class="hover:text-white">Kontak</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+            <h3 class="text-xl font-semibold text-white mb-4">Media Sosial</h3>
+            <div class="flex flex-wrap gap-4">
+
+                <!-- ORCID -->
+                <a href="https://orcid.org/0000-0001-8281-5809" target="_blank"
+                   class="hover:text-white flex items-center space-x-2">
+                    <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" class="w-5 h-5" alt="ORCID">
+                    <span>ORCID</span>
+                </a>
+
+                <!-- Google Scholar -->
+                <a href="https://scholar.google.com/citations?hl=en&user=imE8dykAAAAJ" target="_blank"
+                   class="hover:text-white flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L1 21h22L12 2zm0 4.3l7.53 13.2H4.47L12 6.3z"/>
+                    </svg>
+                    <span>Google Scholar</span>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/dik_dikfs/" target="_blank"
+                   class="hover:text-white flex items-center space-x-2">
+                    <i class="fab fa-instagram text-xl"></i>
+                    <span>Instagram</span>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://facebook.com/dik2fs/" target="_blank"
+                   class="hover:text-white flex items-center space-x-2">
+                    <i class="fab fa-facebook text-xl"></i>
+                    <span>Facebook</span>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@dikdikfirmansidik" target="_blank"
+                   class="hover:text-white flex items-center space-x-2">
+                    <i class="fab fa-tiktok text-xl"></i>
+                    <span>TikTok</span>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400 text-sm">
+        © {{ date('Y') }} Dikdik Firman Sidik — All Rights Reserved.
+    </div>
+</footer>
 </html>
