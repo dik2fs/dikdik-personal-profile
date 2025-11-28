@@ -4,14 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
-use App\Models\Profile; // <-- Tambahkan ini
+use App\Models\Profile;
 
 class ContactController extends Controller
 {
     public function index()
     {
-        // Ambil data profil untuk ditampilkan di halaman contact
+        // Ambil data profil
         $profile = Profile::first();
+
+        // Normalisasi nomor WhatsApp
+        if ($profile && $profile->phone) {
+            // Hapus semua karakter non-angka
+            $clean = preg_replace('/\D/', '', $profile->phone);
+
+            // Jika nomor dimulai dari 0 → ubah ke format 62xxxx
+            if (substr($clean, 0, 1) === '0') {
+                $clean = '62' . substr($clean, 1);
+            }
+
+            $profile->clean_phone = $clean;
+        } else {
+            // Default
+            $profile->clean_phone = '6281311203436';
+        }
 
         return view('contact', compact('profile'));
     }
@@ -33,7 +49,7 @@ class ContactController extends Controller
             'message.max' => 'Pesan maksimal 1000 karakter'
         ]);
 
-        // Simpan pesan ke database
+        // Simpan ke database
         Contact::create($validated);
 
         return redirect()->route('contact')
