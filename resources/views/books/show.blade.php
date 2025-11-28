@@ -286,7 +286,8 @@
         const message = `Halo, saya ingin memesan buku:\n` +
                         `Judul: {{ $book->title }}\n` +
                         `Nama: ${name}\n` +
-                        `WA: ${phone}`;
+                        `WA: ${phone}\n` +
+                        `Alamat: ${address}`;
 
         const url = "https://wa.me/6281311203436?text=" + encodeURIComponent(message);
         window.open(url, "_blank");
