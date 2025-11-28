@@ -282,7 +282,8 @@
 
         const name = document.getElementById('name').value;
         const phone = document.getElementById('phone').value;
-
+        const address = document.getElementById('address') ? document.getElementById('address').value : '';
+        
         const message = `Halo, saya ingin memesan buku:\n` +
                         `Judul: {{ $book->title }}\n` +
                         `Nama: ${name}\n` +

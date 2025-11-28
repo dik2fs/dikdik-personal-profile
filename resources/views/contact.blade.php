@@ -45,7 +45,7 @@
                     </div>
                     <div>
                         <p class="font-semibold text-gray-900">WhatsApp</p>
-                        <p class="text-gray-600">{{ $profile->phone ?? '628123456789' }}</p>
+                        <p class="text-gray-600">{{ $profile->phone ?? '6281311203436' }}</p>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@
 
             </div>
 
-            <a href="https://wa.me/{{ $profile->phone ?? '628123456789' }}"
+            <a href="https://wa.me/{{ $profile->phone ?? '6281311203436' }}"
                target="_blank"
                class="mt-10 inline-flex items-center bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition">
                 <i class="fab fa-whatsapp text-xl mr-2"></i> Chat via WhatsApp
